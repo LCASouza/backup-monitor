@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BackupMonitor.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="200"
+        MinWidth="480" MinHeight="200" MaxWidth="480" MaxHeight="200" WindowStartupLocation="CenterScreen"
+        x:Class="BackupMonitor.Views.JanelaSenha"
+        x:DataType="vm:JanelaSenhaViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Senha de acesso">
+
+	<Design.DataContext>
+		<vm:JanelaSenhaViewModel/>
+	</Design.DataContext>
+
+	<ScrollViewer>
+		<StackPanel Margin="20" Spacing="10">
+			<TextBlock Text="Informe a senha para acessar as configurações"
+                       FontSize="16" FontWeight="Bold" />
+
+			<StackPanel Orientation="Horizontal" Spacing="20">
+				<StackPanel Width="380" Spacing="5">
+					<TextBlock Text="Senha de acesso" />
+					<TextBox Text="{Binding SenhaAcesso}" PasswordChar="*" />
+				</StackPanel>
+			</StackPanel>
+
+			<!-- Status -->
+			<Border Padding="0" CornerRadius="5">
+				<TextBlock Text="{Binding Status}" TextWrapping="Wrap" Foreground="red"/>
+			</Border>
+
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<Button Content="Continuar" Command="{Binding ConfirmarSenhaCommand}"
+                        Background="DodgerBlue" Foreground="White"/>
+			</StackPanel>
+        </StackPanel>
+	</ScrollViewer>
+</Window>

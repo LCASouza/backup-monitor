@@ -1,0 +1,88 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BackupMonitor.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="740" d:DesignHeight="480" WindowStartupLocation="CenterScreen"
+        MinWidth="740" MinHeight="480" MaxWidth="740" MaxHeight="480"
+        x:Class="BackupMonitor.Views.JanelaBackup"
+        x:DataType="vm:JanelaBackupViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Agendamento de Backup">
+
+	<Design.DataContext>
+		<vm:JanelaBackupViewModel/>
+	</Design.DataContext>
+
+	<ScrollViewer>
+		<StackPanel Margin="20" Spacing="15">
+			<TextBlock Text="📅 Agendamento de Backup Completo"
+                       FontSize="16" FontWeight="Bold" />
+
+			<StackPanel Orientation="Horizontal" Spacing="15">
+				<StackPanel Width="320" Spacing="5">
+					<TextBlock Text="Data Inicial:" />
+					<DatePicker SelectedDate="{Binding Modelo.DataInicialCompleto}" />
+				</StackPanel>
+
+				<StackPanel Width="260" Spacing="5">
+					<TextBlock Text="Horário:" />
+					<TimePicker SelectedTime="{Binding Modelo.HoraBackupCompleto}" />
+				</StackPanel>
+
+				<StackPanel Width="250" Spacing="5">
+					<TextBlock Text="Frequência:" />
+					<ComboBox ItemsSource="{Binding Modelo.FrequenciasDisponiveis}"
+							  SelectedItem="{Binding Modelo.FrequenciaSelecionadaCompleto}" />
+				</StackPanel>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<Button Content="Agendar Backup" Command="{Binding AgendarBackupCompletoCommand}"
+                        Background="DodgerBlue" Foreground="White"/>
+				<Button Content="Cancelar Agendamento" Command="{Binding CancelarAgendamentoCompletoCommand}"
+                        Background="Tomato" Foreground="White"/>
+			</StackPanel>
+
+			<!-- Status -->
+			<Border Background="LightBlue" Padding="10" CornerRadius="5">
+				<TextBlock Text="{Binding Modelo.StatusCompleto}" TextWrapping="Wrap" />
+			</Border>
+
+			<Separator Margin="0,10"/>
+
+			<TextBlock Text="📅 Agendamento de Backup Incremental"
+                       FontSize="16" FontWeight="Bold" Margin="0 0 0 0"/>
+
+			<StackPanel Orientation="Horizontal" Spacing="15">
+				<StackPanel Width="320" Spacing="5">
+					<TextBlock Text="Data Inicial:" />
+					<DatePicker SelectedDate="{Binding Modelo.DataInicialIncremental}" />
+				</StackPanel>
+
+				<StackPanel Width="260" Spacing="5">
+					<TextBlock Text="Horário:" />
+					<TimePicker SelectedTime="{Binding Modelo.HoraBackupIncremental}" />
+				</StackPanel>
+
+				<StackPanel Width="250" Spacing="5">
+					<TextBlock Text="Frequência:" />
+					<ComboBox ItemsSource="{Binding Modelo.FrequenciasDisponiveis}"
+							  SelectedItem="{Binding Modelo.FrequenciaSelecionadaIncremental}" />
+				</StackPanel>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<Button Content="Agendar Backup" Command="{Binding AgendarBackupIncrementalCommand}"
+                        Background="DodgerBlue" Foreground="White"/>
+				<Button Content="Cancelar Agendamento" Command="{Binding CancelarAgendamentoIncrementalCommand}"
+                        Background="Tomato" Foreground="White"/>
+			</StackPanel>
+
+			<!-- Status -->
+			<Border Background="LightBlue" Padding="10" CornerRadius="5">
+				<TextBlock Text="{Binding Modelo.StatusIncremental}" TextWrapping="Wrap" />
+			</Border>
+		</StackPanel>
+	</ScrollViewer>
+</Window>

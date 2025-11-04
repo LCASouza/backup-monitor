@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BackupMonitor.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300" WindowStartupLocation="CenterScreen"
+        MinWidth="600" MinHeight="300" MaxWidth="600" MaxHeight="300"
+        x:Class="BackupMonitor.Views.JanelaConfig"
+        x:DataType="vm:JanelaConfigViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Configurações">
+
+	<Design.DataContext>
+		<vm:JanelaConfigViewModel/>
+	</Design.DataContext>
+
+	<ScrollViewer>
+		<StackPanel Margin="20" Spacing="15">
+			<TextBlock Text="⚙️ Configurações"
+                       FontSize="16" FontWeight="Bold" />
+
+			<StackPanel Orientation="Horizontal" Spacing="15">
+				<StackPanel Width="380" Spacing="5">
+					<TextBlock Text="Cadeia de conexão Blob Storage:" />
+					<TextBox Text="{Binding Modelo.CadeiaConexaoAzure}" PasswordChar="*" />
+				</StackPanel>
+
+				<StackPanel Width="250" Spacing="5" HorizontalAlignment="Left">
+					<TextBlock Text="Sistema Operacional" />
+					<ComboBox ItemsSource="{Binding Modelo.SistemaOperacionais}"
+							SelectedItem="{Binding Modelo.SistemaOperacional}"/>
+				</StackPanel>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Spacing="5" Width="300" HorizontalAlignment="Left">
+				<StackPanel Width="250" Spacing="5" HorizontalAlignment="Left">
+					<TextBlock Text="Senha para acesso" />
+					<TextBox Text="{Binding Modelo.Password}" PasswordChar="*"/>
+				</StackPanel>
+
+				<Button Content="Gravar senha" Command="{Binding GravarSenhaCommand}"
+                        Background="DodgerBlue" Foreground="White"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<Button Content="Gravar configuração" Command="{Binding GravarConfiguracaoCommand}"
+                        Background="DodgerBlue" Foreground="White"/>
+				<Button Content="Excluir configuracao" Command="{Binding ExcluirConfiguracaoCommand}"
+                        Background="Tomato" Foreground="White"/>
+			</StackPanel>
+
+			<Border Background="LightBlue" Padding="10" CornerRadius="5">
+				<TextBlock Text="{Binding Modelo.StatusCompleto}" TextWrapping="Wrap" />
+			</Border>
+        </StackPanel>
+	</ScrollViewer>
+</Window>

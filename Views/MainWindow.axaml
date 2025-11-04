@@ -1,0 +1,83 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BackupMonitor.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="370"
+        MinWidth="700" MinHeight="370" MaxWidth="700" MaxHeight="370" WindowStartupLocation="CenterScreen"
+        x:Class="BackupMonitor.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Backup Monitor">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+     <StackPanel Margin="20" Spacing="10">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="10">
+            <Button Content="📅 Abrir Agendamento de Backup"
+		        HorizontalAlignment="Left"
+		        Command="{Binding AbrirJanelaBackupCommand}"
+		        Background="DodgerBlue"
+		        Foreground="White"
+		        Padding="5,2" />
+
+            <Button Content="⚙️ Configurações Azure"
+		        HorizontalAlignment="Left"
+		        Command="{Binding AbrirJanelaConfigCommand}"
+		        Background="DodgerBlue"
+		        Foreground="White"
+		        Padding="5,2" />
+        </StackPanel>
+
+		<Separator Margin="0,10"/>
+		 
+        <TextBlock Text="🔒 Backup do PostgreSQL" FontSize="18" FontWeight="Bold" />
+        
+        <StackPanel Orientation="Horizontal" Spacing="15">
+            <!-- Host -->
+            <StackPanel Spacing="5" Width="240">
+                <TextBlock Text="Host" />
+                <TextBox Text="{Binding DbHost}" />
+            </StackPanel>
+
+            <!-- Nome Banco de Dados -->
+            <StackPanel Spacing="5" Width="240">
+                <TextBlock Text="Nome do banco de Dados" />
+                <TextBox Text="{Binding DbName}" />
+            </StackPanel>
+
+            <!-- Porta -->
+            <StackPanel Spacing="5" Width="100">
+                <TextBlock Text="Porta" />
+                <TextBox Text="{Binding DbPort}" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="15">
+            <StackPanel Spacing="5" Width="300">
+                <TextBlock Text="Usuário do banco de dados" />
+                <TextBox Text="{Binding DbUser}" />
+            </StackPanel>
+
+            <StackPanel Spacing="5" Width="300">
+                <TextBlock Text="Senha do banco de dados" />
+                <TextBox Text="{Binding DbPassword}" PasswordChar="*" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="20" Margin="0 25 0 0">
+            <Button Content="Testar Conexão" Command="{Binding TestarConexaoCommand}" />
+            <Button Content="Gravar dados" Command="{Binding GravarDadosPostgresCommand}" />
+            <Button Content="Fazer Backup local" Command="{Binding BackupDatabaseCommand}" 
+                    Background="Green" Foreground="White" />
+            <Button Content="Fazer Backup no Azure" Command="{Binding BackupDatabaseCommand}" 
+                    Background="Green" Foreground="White" />
+        </StackPanel>
+
+        <Border Background="LightBlue" Padding="10" CornerRadius="5" Margin="0 2 0 0">
+            <TextBlock Text="{Binding Status}" TextWrapping="Wrap" />
+        </Border>
+    </StackPanel>
+</Window>

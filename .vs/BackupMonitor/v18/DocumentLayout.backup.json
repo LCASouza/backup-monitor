@@ -1,0 +1,110 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|d:\\desenvolvimento\\desenvolvimento\\backupmonitor\\viewmodels\\janelabackupviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|solutionrelative:viewmodels\\janelabackupviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|d:\\desenvolvimento\\desenvolvimento\\backupmonitor\\views\\mainwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|solutionrelative:views\\mainwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|d:\\desenvolvimento\\desenvolvimento\\backupmonitor\\app.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|solutionrelative:app.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|d:\\desenvolvimento\\desenvolvimento\\backupmonitor\\views\\janelabackup.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|solutionrelative:views\\janelabackup.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|d:\\desenvolvimento\\desenvolvimento\\backupmonitor\\views\\janelabackup.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD739B71-04F8-D2B3-822F-9EB94A48733F}|BackupMonitor.csproj|solutionrelative:views\\janelabackup.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\Views\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.axaml",
+              "ToolTip": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\Views\\MainWindow.axaml",
+              "RelativeToolTip": "Views\\MainWindow.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-25T15:10:33.66Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JanelaBackupViewModel.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\ViewModels\\JanelaBackupViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\JanelaBackupViewModel.cs",
+              "ToolTip": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\ViewModels\\JanelaBackupViewModel.cs",
+              "RelativeToolTip": "ViewModels\\JanelaBackupViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:50:20.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JanelaBackup.axaml.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\Views\\JanelaBackup.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\JanelaBackup.axaml.cs",
+              "ToolTip": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\Views\\JanelaBackup.axaml.cs",
+              "RelativeToolTip": "Views\\JanelaBackup.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:48:22.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JanelaBackup.axaml",
+              "DocumentMoniker": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\Views\\JanelaBackup.axaml",
+              "RelativeDocumentMoniker": "Views\\JanelaBackup.axaml",
+              "ToolTip": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\Views\\JanelaBackup.axaml",
+              "RelativeToolTip": "Views\\JanelaBackup.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-25T15:47:31.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.axaml",
+              "DocumentMoniker": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\App.axaml",
+              "RelativeDocumentMoniker": "App.axaml",
+              "ToolTip": "D:\\Desenvolvimento\\Desenvolvimento\\BackupMonitor\\App.axaml",
+              "RelativeToolTip": "App.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-25T15:47:47.021Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
