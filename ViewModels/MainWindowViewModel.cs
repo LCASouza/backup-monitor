@@ -222,7 +222,7 @@ public partial class MainWindowViewModel : ViewModelBase
         }
         else
         {
-            janela = new(appConfig.PostgresConnectionString, appConfig.AccessPassword);
+            janela = new(appConfig.AzureConnectionString, appConfig.AccessPassword);
         }
 
         janela.Show();

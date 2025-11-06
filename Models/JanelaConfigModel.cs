@@ -18,10 +18,10 @@ public partial class JanelaConfigModel : ObservableObject
     private string sistemaOperacional = string.Empty;
 
     [ObservableProperty]
-    private string cadeiaConexaoAzure;
+    private string cadeiaConexaoAzure = string.Empty;
 
     [ObservableProperty]
-    private string cadeiaConexaoPostgres;
+    private string cadeiaConexaoPostgres = string.Empty;
 
     [ObservableProperty]
     private string statusCompleto = "Pronto";

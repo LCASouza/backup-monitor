@@ -22,7 +22,7 @@
 			<StackPanel Orientation="Horizontal" Spacing="15">
 				<StackPanel Width="380" Spacing="5">
 					<TextBlock Text="Cadeia de conexão Blob Storage:" />
-					<TextBox Text="{Binding Modelo.CadeiaConexaoAzure}" PasswordChar="*" />
+					<TextBox Text="{Binding Modelo.CadeiaConexaoAzure}" PasswordChar="*"/>
 				</StackPanel>
 
 				<StackPanel Width="250" Spacing="5" HorizontalAlignment="Left">

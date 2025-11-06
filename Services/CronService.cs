@@ -108,5 +108,20 @@ namespace BackupMonitor.Services
 
             return output;
         }
+
+        public static void CriarScriptBackup(string path, string conteudo)
+        {
+            File.WriteAllText(path, conteudo);
+
+            // dar permissão de execução
+            var chmod = new ProcessStartInfo
+            {
+                FileName = "/bin/bash",
+                Arguments = $"-c \"chmod +x {path}\"",
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            Process.Start(chmod);
+        }
     }
 }
