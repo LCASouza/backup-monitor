@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\Desenvolvimento\\BackupMonitor\\BackupMonitor.csproj": {}
+    "/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/BackupMonitor.csproj": {}
   },
   "projects": {
-    "D:\\Development\\Desenvolvimento\\BackupMonitor\\BackupMonitor.csproj": {
+    "/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/BackupMonitor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\Desenvolvimento\\BackupMonitor\\BackupMonitor.csproj",
+        "projectUniqueName": "/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/BackupMonitor.csproj",
         "projectName": "BackupMonitor",
-        "projectPath": "D:\\Development\\Desenvolvimento\\BackupMonitor\\BackupMonitor.csproj",
-        "packagesPath": "C:\\Users\\dxfzl\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\Desenvolvimento\\BackupMonitor\\obj\\",
+        "projectPath": "/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/BackupMonitor.csproj",
+        "packagesPath": "/home/lsouza/.nuget/packages/",
+        "outputPath": "/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dxfzl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/lsouza/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +39,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -97,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

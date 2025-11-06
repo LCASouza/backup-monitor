@@ -241,102 +241,303 @@ D:/Desenvolvimento/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/ref/BackupMoni
 /home/lsouza/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.pdb
 /home/lsouza/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.genruntimeconfig.cache
 /home/lsouza/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/ref/BackupMonitor.dll
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMonitor.csproj.AssemblyReference.cache
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\Avalonia\Resources.Inputs.cache
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\Avalonia\resources
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMonitor.GeneratedMSBuildEditorConfig.editorconfig
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMonitor.AssemblyInfoInputs.cache
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMonitor.AssemblyInfo.cs
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMonitor.csproj.CoreCompileInputs.cache
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMonitor.dll
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\refint\BackupMonitor.dll
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMonitor.pdb
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\BackupMonitor.exe
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\BackupMonitor.deps.json
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\BackupMonitor.runtimeconfig.json
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\BackupMonitor.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\BackupMonitor.pdb
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Base.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Controls.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.DesignerSupport.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Dialogs.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Markup.Xaml.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Markup.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Metal.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.MicroCom.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.OpenGL.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Vulkan.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Controls.ColorPicker.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Desktop.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Diagnostics.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Fonts.Inter.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.FreeDesktop.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Native.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Remote.Protocol.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Skia.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Themes.Fluent.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Themes.Simple.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Win32.Automation.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.Win32.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Avalonia.X11.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Azure.Core.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Azure.Storage.Blobs.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Azure.Storage.Common.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\CommunityToolkit.Mvvm.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\HarfBuzzSharp.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\MicroCom.Runtime.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\SkiaSharp.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\System.ClientModel.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\System.Diagnostics.EventLog.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\System.IO.Hashing.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\System.Memory.Data.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Microsoft.Win32.TaskScheduler.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Tmds.DBus.Protocol.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\de\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\es\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\fr\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\it\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\ja\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\pl\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\ru\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\sv\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\tr\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\zh-CN\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\zh-Hant\Microsoft.Win32.TaskScheduler.resources.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-arm64\native\av_libglesv2.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-x64\native\av_libglesv2.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-x86\native\av_libglesv2.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\osx\native\libAvaloniaNative.dylib
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-arm\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-arm64\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-loongarch64\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-musl-arm\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-musl-arm64\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-musl-loongarch64\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-musl-riscv64\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-riscv64\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-x64\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-x86\native\libHarfBuzzSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\osx\native\libHarfBuzzSharp.dylib
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-arm64\native\libHarfBuzzSharp.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-x64\native\libHarfBuzzSharp.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-x86\native\libHarfBuzzSharp.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-arm\native\libSkiaSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-arm64\native\libSkiaSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libSkiaSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\linux-x64\native\libSkiaSharp.so
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\osx\native\libSkiaSharp.dylib
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-arm64\native\libSkiaSharp.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-x64\native\libSkiaSharp.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win-x86\native\libSkiaSharp.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
-D:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMo.21D42826.Up2Date
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\BackupMonitor.genruntimeconfig.cache
-D:\Development\Desenvolvimento\BackupMonitor\obj\Debug\net9.0\ref\BackupMonitor.dll
-d:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-d:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
-d:\Development\Desenvolvimento\BackupMonitor\bin\Debug\net9.0\Npgsql.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.exe
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.deps.json
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.runtimeconfig.json
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.pdb
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Base.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Controls.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.DesignerSupport.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Dialogs.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Markup.Xaml.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Markup.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Metal.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.MicroCom.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.OpenGL.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Vulkan.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Controls.ColorPicker.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Desktop.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Diagnostics.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Fonts.Inter.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.FreeDesktop.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Native.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Remote.Protocol.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Skia.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Themes.Fluent.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Themes.Simple.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Win32.Automation.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Win32.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.X11.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Core.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Storage.Blobs.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Storage.Common.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/CommunityToolkit.Mvvm.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/HarfBuzzSharp.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/MicroCom.Runtime.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Npgsql.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/SkiaSharp.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.ClientModel.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.IO.Hashing.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.Memory.Data.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Win32.TaskScheduler.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Tmds.DBus.Protocol.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/de/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/es/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/fr/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/it/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/ja/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/pl/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/ru/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/sv/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/tr/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/zh-CN/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/zh-Hant/Microsoft.Win32.TaskScheduler.resources.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/av_libglesv2.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/av_libglesv2.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/av_libglesv2.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libAvaloniaNative.dylib
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm64/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-loongarch64/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-loongarch64/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-riscv64/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-riscv64/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x64/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x86/native/libHarfBuzzSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm/native/libSkiaSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm64/native/libSkiaSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libSkiaSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x64/native/libSkiaSharp.so
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libSkiaSharp.dylib
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/libSkiaSharp.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/libSkiaSharp.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/libSkiaSharp.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll
+D:/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.csproj.AssemblyReference.cache
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/Avalonia/Resources.Inputs.cache
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/Avalonia/resources
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.GeneratedMSBuildEditorConfig.editorconfig
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.AssemblyInfoInputs.cache
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.AssemblyInfo.cs
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.csproj.CoreCompileInputs.cache
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.sourcelink.json
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMo.21D42826.Up2Date
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.dll
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/refint/BackupMonitor.dll
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.pdb
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.genruntimeconfig.cache
+D:/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/ref/BackupMonitor.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.deps.json
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.runtimeconfig.json
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.pdb
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Base.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Controls.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.DesignerSupport.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Dialogs.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Markup.Xaml.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Markup.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Metal.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.MicroCom.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.OpenGL.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Vulkan.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Controls.ColorPicker.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Desktop.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Diagnostics.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Fonts.Inter.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.FreeDesktop.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Native.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Remote.Protocol.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Skia.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Themes.Fluent.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Themes.Simple.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Win32.Automation.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Win32.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.X11.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Core.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Storage.Blobs.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Storage.Common.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/CommunityToolkit.Mvvm.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/HarfBuzzSharp.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/MicroCom.Runtime.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Npgsql.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/SkiaSharp.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.ClientModel.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.IO.Hashing.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.Memory.Data.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Win32.TaskScheduler.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Tmds.DBus.Protocol.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/de/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/es/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/fr/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/it/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/ja/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/pl/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/ru/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/sv/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/tr/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/zh-CN/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/zh-Hant/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/av_libglesv2.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/av_libglesv2.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/av_libglesv2.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libAvaloniaNative.dylib
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-loongarch64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-loongarch64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-riscv64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-riscv64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x86/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm/native/libSkiaSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm64/native/libSkiaSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libSkiaSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x64/native/libSkiaSharp.so
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libSkiaSharp.dylib
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/libSkiaSharp.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/libSkiaSharp.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.csproj.AssemblyReference.cache
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/Avalonia/Resources.Inputs.cache
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/Avalonia/resources
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.GeneratedMSBuildEditorConfig.editorconfig
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.AssemblyInfoInputs.cache
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.AssemblyInfo.cs
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.csproj.CoreCompileInputs.cache
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.sourcelink.json
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMo.21D42826.Up2Date
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/refint/BackupMonitor.dll
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.pdb
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.genruntimeconfig.cache
+/media/lsouza/SSD TOP/Development/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/ref/BackupMonitor.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.deps.json
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.runtimeconfig.json
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/BackupMonitor.pdb
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Base.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Controls.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.DesignerSupport.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Dialogs.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Markup.Xaml.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Markup.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Metal.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.MicroCom.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.OpenGL.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Vulkan.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Controls.ColorPicker.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Desktop.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Diagnostics.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Fonts.Inter.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.FreeDesktop.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Native.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Remote.Protocol.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Skia.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Themes.Fluent.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Themes.Simple.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Win32.Automation.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.Win32.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Avalonia.X11.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Core.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Storage.Blobs.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Azure.Storage.Common.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/CommunityToolkit.Mvvm.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/HarfBuzzSharp.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/MicroCom.Runtime.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Npgsql.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/SkiaSharp.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.ClientModel.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.IO.Hashing.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/System.Memory.Data.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Microsoft.Win32.TaskScheduler.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/Tmds.DBus.Protocol.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/de/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/es/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/fr/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/it/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/ja/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/pl/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/ru/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/sv/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/tr/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/zh-CN/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/zh-Hant/Microsoft.Win32.TaskScheduler.resources.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/av_libglesv2.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/av_libglesv2.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/av_libglesv2.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libAvaloniaNative.dylib
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-loongarch64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-arm/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-arm64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-loongarch64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-riscv64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-riscv64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x64/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x86/native/libHarfBuzzSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm/native/libSkiaSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-arm64/native/libSkiaSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-musl-x64/native/libSkiaSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/linux-x64/native/libSkiaSharp.so
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/osx/native/libSkiaSharp.dylib
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x64/native/libSkiaSharp.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win-x86/native/libSkiaSharp.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.csproj.AssemblyReference.cache
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/Avalonia/Resources.Inputs.cache
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/Avalonia/resources
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.GeneratedMSBuildEditorConfig.editorconfig
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.AssemblyInfoInputs.cache
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.AssemblyInfo.cs
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.csproj.CoreCompileInputs.cache
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.sourcelink.json
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMo.21D42826.Up2Date
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/refint/BackupMonitor.dll
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.pdb
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/BackupMonitor.genruntimeconfig.cache
+/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/obj/Debug/net9.0/ref/BackupMonitor.dll
