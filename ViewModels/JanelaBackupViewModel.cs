@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using BackupMonitor.Models;
 using System.IO;
 
+//Teste Git
 namespace BackupMonitor.ViewModels
 {
     public partial class JanelaBackupViewModel : ObservableObject
@@ -18,7 +19,7 @@ namespace BackupMonitor.ViewModels
 
         public JanelaBackupViewModel()
         {
-            
+
         }
 
         [RelayCommand]
