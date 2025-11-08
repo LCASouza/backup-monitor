@@ -12,30 +12,15 @@ namespace BackupMonitor.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
+    [ObservableProperty]
+    private MainWindowModel modelo = new MainWindowModel();
+        
     private Window ownerWindow;
     private AppConfig appConfig;
     private readonly PostgresService pgService = new();
     private readonly HashService hashService = new();
     private readonly CriptografiaService criptoService = new();
     private readonly AzureBlobService azureService = new();
-
-    [ObservableProperty]
-    private string dbHost = "localhost";
-    
-    [ObservableProperty]
-    private int dbPort = 5432;
-    
-    [ObservableProperty]
-    private string dbUser = "usuario";
-    
-    [ObservableProperty]
-    private string dbPassword = string.Empty;
-    
-    [ObservableProperty] 
-    private string dbName = "testes";
-
-    [ObservableProperty]
-    private string status = "Pronto";
     
     public bool isOk = false;
 
@@ -50,7 +35,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
             if (!File.Exists(configPath))
             {
-                Status = "Nenhum arquivo de configuração encontrado. Configure os dados no aplicativo.";
+                Modelo.Status = "Nenhum arquivo de configuração encontrado. Configure os dados no aplicativo.";
                 isOk = true;
                 return;
             }
@@ -62,25 +47,25 @@ public partial class MainWindowViewModel : ViewModelBase
             // Usuário cancelou ou não digitou a senha
             if (result != true || string.IsNullOrEmpty(janelaSenha.SenhaAcesso))
             {
-                Status = "Operação cancelada pelo usuário.";
+                Modelo.Status = "Operação cancelada pelo usuário.";
                 return;
             }
 
             var config = ConfigService.LoadConfig(janelaSenha.SenhaAcesso);
             appConfig = config;
 
-            DbHost = config.PostgresHost;
-            DbPort = config.PostgresPort;
-            DbUser = config.PostgresUser;
-            DbPassword = config.PostgresPassword;
-            DbName = config.PostgresDbName;
+            Modelo.DbHost = config.PostgresHost;
+            Modelo.DbPort = config.PostgresPort;
+            Modelo.DbUser = config.PostgresUser;
+            Modelo.DbPassword = config.PostgresPassword;
+            Modelo.DbName = config.PostgresDbName;
 
             isOk = true;
-            Status = "Configuração carregada com sucesso.";
+            Modelo.Status = "Configuração carregada com sucesso.";
         }
         catch (Exception ex)
         {
-            Status = $"Erro ao carregar configuração: {ex.Message}";
+            Modelo.Status = $"Erro ao carregar configuração: {ex.Message}";
         }
     }
 
@@ -89,38 +74,38 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
-            Status = "Iniciando dump do PostgreSQL...";
+            Modelo.Status = "Iniciando dump do PostgreSQL...";
             
             //Gera o dump do banco de dados
             string dumpPath = pgService.BackupDatabase(
-                DbHost, DbPort, DbName, DbUser, DbPassword, Path.GetTempPath());
+                Modelo.DbHost, Modelo.DbPort, Modelo.DbName, Modelo.DbUser, Modelo.DbPassword, Path.GetTempPath());
             
-            Status = $"Dump criado: {Path.GetFileName(dumpPath)}\nCalculando hash...";
+            Modelo.Status = $"Dump criado: {Path.GetFileName(dumpPath)}\nCalculando hash...";
 
             //Calcula o hash do arquivo
             string hash = hashService.ComputeSha256(dumpPath);
-            Status = $"Hash: {hash.Substring(0, 12)}...\nCriptografando...";
+            Modelo.Status = $"Hash: {hash.Substring(0, 12)}...\nCriptografando...";
 
             //Criptografa o arquivo antes do envio
             string encPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(dumpPath) + ".enc");
             criptoService.EncryptFile(dumpPath, encPath, appConfig.AccessPassword);
-            Status = "Enviando para Azure Blob...";
+            Modelo.Status = "Enviando para Azure Blob...";
 
             //Realiza o Upload para o Azure Blob Storage
-            string blobFileName = $"{DbName}_{DateTime.Now:yyyyMMdd_HHmmss}_{hash.Substring(0, 16)}.enc";
+            string blobFileName = $"{Modelo.DbName}_{DateTime.Now:yyyyMMdd_HHmmss}_{hash.Substring(0, 16)}.enc";
             azureService.Upload(encPath, blobFileName);
 
-            Status = "Backup concluído! Limpando arquivos...";
+            Modelo.Status = "Backup concluído! Limpando arquivos...";
 
             //Limpa os arquivos temporários
             if (File.Exists(dumpPath)) File.Delete(dumpPath);
             if (File.Exists(encPath)) File.Delete(encPath);
 
-            Status = "✅ Backup finalizado com sucesso!";
+            Modelo.Status = "✅ Backup finalizado com sucesso!";
         }
         catch (Exception ex)
         {
-            Status = $"❌ Erro no backup: {ex.Message}";
+            Modelo.Status = $"❌ Erro no backup: {ex.Message}";
         }
     }
 
@@ -129,16 +114,16 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
-            Status = "Testando conexão com PostgreSQL...";
+            Modelo.Status = "Testando conexão com PostgreSQL...";
 
-            if (pgService.TestarConexao(dbHost, dbPort, dbUser, dbPassword, dbName))
-                Status = "✅ Conexão com PostgreSQL OK!";
+            if (pgService.TestarConexao(Modelo.DbHost, Modelo.DbPort, Modelo.DbUser, Modelo.DbPassword, Modelo.DbName))
+                Modelo.Status = "✅ Conexão com PostgreSQL OK!";
             else
-                Status = "❌ Falha na conexão: Vefique os dados e tente novamente.";
+                Modelo.Status = "❌ Falha na conexão: Vefique os dados e tente novamente.";
         }
         catch (Exception ex)
         {
-            Status = $"❌ Falha na conexão: Vefique os dados e tente novamente.";
+            Modelo.Status = $"❌ Falha na conexão: Vefique os dados e tente novamente.";
         }
     }
 
@@ -147,29 +132,29 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
-            if (string.IsNullOrEmpty(DbHost) ||
-               string.IsNullOrEmpty(DbUser) ||
-               string.IsNullOrEmpty(DbName))
+            if (string.IsNullOrEmpty(Modelo.DbHost) ||
+               string.IsNullOrEmpty(Modelo.DbUser) ||
+               string.IsNullOrEmpty(Modelo.DbName))
             {
-                Status = "❌ Preencha todos os campos obrigatórios.";
+                Modelo.Status = "❌ Preencha todos os campos obrigatórios.";
                 return;
             }
 
-            if (DbPort <= 0)
+            if (Modelo.DbPort <= 0)
             {
-                Status = "❌ A porta deve ser um número válido.";
+                Modelo.Status = "❌ A porta deve ser um número válido.";
                 return;
             }
 
-            if (string.IsNullOrEmpty(DbPassword))
+            if (string.IsNullOrEmpty(Modelo.DbPassword))
             {
-                Status = "❌ A senha do banco de dados não pode ser vazia.";
+                Modelo.Status = "❌ A senha do banco de dados não pode ser vazia.";
                 return;
             }
-            
+
             if (appConfig == null)
             {
-                Status = "⚠️ É necessário cadastrar uma senha de acesso em configurações antes de gravar os dados.";
+                Modelo.Status = "⚠️ É necessário cadastrar uma senha de acesso em configurações antes de gravar os dados.";
                 return;
             }
 
@@ -179,34 +164,79 @@ public partial class MainWindowViewModel : ViewModelBase
             // Usuário cancelou ou não digitou a senha
             if (result != true || string.IsNullOrEmpty(janelaSenha.SenhaAcesso))
             {
-                Status = "Operação cancelada pelo usuário.";
+                Modelo.Status = "Operação cancelada pelo usuário.";
                 return;
             }
 
             var config = new AppConfig
             {
-                PostgresConnectionString = $"Host={DbHost};Port={DbPort};Database={DbName};Username={DbUser};Password={DbPassword}",
-                PostgresHost = DbHost,
-                PostgresPort = DbPort,
-                PostgresUser = DbUser,
-                PostgresPassword = DbPassword,
-                PostgresDbName = DbName
+                PostgresConnectionString = $"Host={Modelo.DbHost};Port={Modelo.DbPort};Database={Modelo.DbName};Username={Modelo.DbUser};Password={Modelo.DbPassword}",
+                PostgresHost = Modelo.DbHost,
+                PostgresPort = Modelo.DbPort,
+                PostgresUser = Modelo.DbUser,
+                PostgresPassword = Modelo.DbPassword,
+                PostgresDbName = Modelo.DbName
             };
 
             ConfigService.SaveConfig(config, janelaSenha.SenhaAcesso);
 
-            Status = "✅ Dados do PostgreSQL gravados com sucesso!";
+            Modelo.Status = "✅ Dados do PostgreSQL gravados com sucesso!";
         }
         catch (Exception ex)
         {
-            Status = $"❌ Erro ao gravar dados: {ex.Message}";
+            Modelo.Status = $"❌ Erro ao gravar dados: {ex.Message}";
+        }
+    }
+    
+    [RelayCommand]
+    private async Task BackupLocalAsync()
+    {
+        try
+        {
+            Modelo.Status = "📦 Iniciando backup local...";
+
+            var dialog = new SaveFileDialog
+            {
+                Title = "Salvar backup do banco",
+                Filters =
+                {
+                    new FileDialogFilter() { Name = "Arquivos de backup PostgreSQL", Extensions = { "dump" } },
+                    new FileDialogFilter() { Name = "Todos os arquivos", Extensions = { "*" } }
+                },
+                InitialFileName = $"{Modelo.DbName}_backup_{DateTime.Now:yyyyMMdd_HHmm}.dump"
+            };
+
+            string? filePath = await dialog.ShowAsync(ownerWindow);
+            if (string.IsNullOrEmpty(filePath))
+            {
+                Modelo.Status = "Operação cancelada pelo usuário.";
+                return;
+            }
+
+            Modelo.Status = "⏳ Gerando dump...";
+
+            // Chama o serviço de dump
+            string dumpPath = pgService.BackupDatabase(
+                Modelo.DbHost,
+                Modelo.DbPort,
+                Modelo.DbName,
+                Modelo.DbUser,
+                Modelo.DbPassword,
+                filePath
+            );
+
+            Modelo.Status = $"✅ Backup salvo com sucesso em:\n{filePath}";
+        }
+        catch (Exception ex)
+        {
+            Modelo.Status = $"❌ Erro ao realizar backup local: {ex.Message}";
         }
     }
 
     [RelayCommand]
     private void AbrirJanelaBackup()
     {
-        JanelaBackup janela = new();
+        JanelaBackup janela = new(appConfig.AccessPassword);
 
         janela.Show();
     }

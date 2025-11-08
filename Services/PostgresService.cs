@@ -8,51 +8,30 @@ namespace BackupMonitor.Services;
 
 public class PostgresService
 {
-    public string BackupDatabase(string host, int port, string dbName, string username,
-        string password, string outputDirectory = null)
+    public string BackupDatabase(string host, int port, string dbName, string user, string password, string outputFile)
     {
-        if (string.IsNullOrEmpty(host)) host = "localhost";
-        if (port <= 0) port = 5432;
-        if (string.IsNullOrEmpty(outputDirectory)) outputDirectory = Path.GetTempPath();
-
-        Directory.CreateDirectory(outputDirectory);
-
-        string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-        string fileName = $"{dbName}_{timestamp}.dump";
-        string outputPath = Path.Combine(outputDirectory, fileName);
-
-        string args = $"-h {EscapeArg(host)} -p {port} -U {EscapeArg(username)} " +
-                      $"-F c -Z 9 -f \"{outputPath}\" {EscapeArg(dbName)}";
+        Directory.CreateDirectory(Path.GetDirectoryName(outputFile)!);
 
         var psi = new ProcessStartInfo
         {
             FileName = "pg_dump",
-            Arguments = args,
-            RedirectStandardError = true,
+            Arguments = $"-h {host} -p {port} -U {user} -F c -f \"{outputFile}\" {dbName}",
             UseShellExecute = false,
+            RedirectStandardError = true,
+            RedirectStandardOutput = true,
             CreateNoWindow = true
         };
 
-        if (!string.IsNullOrEmpty(password))
-            psi.EnvironmentVariables["PGPASSWORD"] = password;
+        psi.Environment["PGPASSWORD"] = password;
 
-        using (var proc = new Process { StartInfo = psi })
-        {
-            proc.Start();
+        using var process = Process.Start(psi)!;
+        string error = process.StandardError.ReadToEnd();
+        process.WaitForExit();
 
-            string stderr = proc.StandardError.ReadToEnd();
-            proc.WaitForExit();
+        if (process.ExitCode != 0)
+            throw new Exception($"Erro ao gerar dump: {error}");
 
-            if (proc.ExitCode != 0)
-            {
-                if (File.Exists(outputPath))
-                    File.Delete(outputPath);
-
-                throw new Exception($"pg_dump falhou: {stderr}");
-            }
-        }
-
-        return outputPath;
+        return outputFile;
     }
 
     private static string EscapeArg(string arg)

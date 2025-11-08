@@ -17,9 +17,11 @@ namespace BackupMonitor.ViewModels
         [ObservableProperty]
         private JanelaBackupModel modelo = new JanelaBackupModel();
 
-        public JanelaBackupViewModel()
-        {
+        private string senhaAcesso;
 
+        public JanelaBackupViewModel(string senha)
+        {
+            senhaAcesso = senha;
         }
 
         [RelayCommand]
@@ -27,66 +29,34 @@ namespace BackupMonitor.ViewModels
         {
             try
             {
-                string jobName = "Backup_Completo";
+                //Carregar config.enc com a senha
+                var cfg = ConfigService.LoadConfig(senhaAcesso);
 
-                if (Environment.OSVersion.Platform == PlatformID.Unix)
-                {
-                    string home = "/home/" + Environment.UserName;
-                    string scriptCompleto = @"
-                    #!/bin/bash
-                    DATA=$(date +'%Y-%m-%d_%H-%M')
-                    pg_dump -h localhost -U backupuser -F c financas > ""/home/$USER/backups/backup_completo_$DATA.dump""
-                    ";
-                    string scriptCompletoPath = $"{home}/backup_completo.sh";
+                //Criar o script completo
+                string scriptPath = CronScriptService.CriarScript("completo", cfg);
 
-                    // Criar script se não existir
-                    if (!File.Exists(scriptCompletoPath))
-                    {
-                        CronService.CriarScriptBackup(scriptCompletoPath, scriptCompleto);
-                    }
+                //Agendar no cron
+                CronService.ScheduleBackup(
+                    scriptPath,
+                    Modelo.DataInicialCompleto ?? DateTimeOffset.Now,
+                    Modelo.HoraBackupCompleto ?? TimeSpan.FromHours(2),
+                    Modelo.FrequenciaSelecionadaCompleto ?? "Diário",
+                    "Backup_Completo"
+                );
 
-                    // Agendar no cron
-                    CronService.ScheduleBackup(
-                        scriptCompletoPath,
-                        Modelo.DataInicialCompleto!.Value,
-                        Modelo.HoraBackupCompleto!.Value,
-                        Modelo.FrequenciaSelecionadaCompleto!,
-                        "Backup_Completo"
-                    );
-                }
-                else
-                {
-                    // WINDOWS
-                    WindowsTaskSchedulerService.ScheduleBackup(
-                        exePath: "C:\\Caminho\\Para\\SeuBackup.exe",
-                        startDate: Modelo.DataInicialCompleto.Value.DateTime,
-                        hora: Modelo.HoraBackupCompleto.Value,
-                        frequencia: Modelo.FrequenciaSelecionadaCompleto,
-                        nomeTarefa: jobName
-                    );
-                }
-
-                Modelo.StatusCompleto =
-                    $"✅ Backup COMPLETO agendado para {Modelo.DataInicialCompleto:d} às {Modelo.HoraBackupCompleto:hh\\:mm} ({Modelo.FrequenciaSelecionadaCompleto})";
+                Modelo.StatusCompleto = $"✅ Backup COMPLETO agendado com sucesso ({Modelo.FrequenciaSelecionadaCompleto})";
             }
             catch (Exception ex)
             {
-                Modelo.StatusCompleto = $"❌ Erro ao agendar backup: {ex.Message}";
+                Modelo.StatusCompleto = $"❌ Erro ao agendar backup completo: {ex.Message}";
             }
         }
-
 
         [RelayCommand]
         private void CancelarAgendamentoCompleto()
         {
-            string jobName = "Backup_Completo";
-
-            if (Environment.OSVersion.Platform == PlatformID.Unix)
-                CronService.RemoveBackupJob(jobName);
-            else
-                WindowsTaskSchedulerService.RemoveBackupJob(jobName);
-
-            Modelo.StatusCompleto = "❌ Agendamento completo cancelado";
+            CronService.RemoveBackupJob("Backup_Completo");
+            Modelo.StatusCompleto = "⛔ Agendamento completo cancelado.";
         }
 
         [RelayCommand]
@@ -94,53 +64,31 @@ namespace BackupMonitor.ViewModels
         {
             try
             {
-                string jobName = "Backup_Incremental";
+                var cfg = ConfigService.LoadConfig(senhaAcesso);
 
-                if (Environment.OSVersion.Platform == PlatformID.Unix)
-                {
-                    string scriptPath = "/home/lucas/backup_incremental.sh";
+                string scriptPath = CronScriptService.CriarScript("incremental", cfg);
 
-                    CronService.ScheduleBackup(
-                        scriptPath,
-                        Modelo.DataInicialIncremental ?? DateTimeOffset.Now,
-                        Modelo.HoraBackupIncremental ?? TimeSpan.FromHours(2),
-                        Modelo.FrequenciaSelecionadaIncremental,
-                        jobName
-                    );
-                }
-                else
-                {
-                    WindowsTaskSchedulerService.ScheduleBackup(
-                        exePath: "C:\\Caminho\\Para\\SeuBackupIncremental.exe",
-                        startDate: Modelo.DataInicialIncremental.Value.DateTime,
-                        hora: Modelo.HoraBackupIncremental.Value,
-                        frequencia: Modelo.FrequenciaSelecionadaIncremental,
-                        nomeTarefa: jobName
-                    );
-                }
+                CronService.ScheduleBackup(
+                    scriptPath,
+                    Modelo.DataInicialIncremental ?? DateTimeOffset.Now,
+                    Modelo.HoraBackupIncremental ?? TimeSpan.FromHours(2),
+                    Modelo.FrequenciaSelecionadaIncremental ?? "Diário",
+                    "Backup_Incremental"
+                );
 
-                Modelo.StatusIncremental =
-                    $"✅ Backup INCREMENTAL agendado para {Modelo.DataInicialIncremental:d} às {Modelo.HoraBackupIncremental:hh\\:mm} ({Modelo.FrequenciaSelecionadaIncremental})";
+                Modelo.StatusIncremental = $"✅ Backup INCREMENTAL agendado com sucesso ({Modelo.FrequenciaSelecionadaIncremental})";
             }
             catch (Exception ex)
             {
-                Modelo.StatusIncremental = $"❌ Erro ao agendar backup: {ex.Message}";
+                Modelo.StatusIncremental = $"❌ Erro ao agendar backup incremental: {ex.Message}";
             }
         }
 
         [RelayCommand]
         private void CancelarAgendamentoIncremental()
         {
-            Modelo.StatusIncremental = "Agendamento cancelado";
-
-            string jobName = "Backup_Incremental";
-
-            if (Environment.OSVersion.Platform == PlatformID.Unix)
-                CronService.RemoveBackupJob(jobName);
-            else
-                WindowsTaskSchedulerService.RemoveBackupJob(jobName);
-
-            Modelo.StatusIncremental = "Agendamento incremental cancelado";
+            CronService.RemoveBackupJob("Backup_Incremental");
+            Modelo.StatusIncremental = "⛔ Agendamento incremental cancelado.";
         }
     }
 }

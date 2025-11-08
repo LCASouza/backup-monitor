@@ -82,6 +82,23 @@ public class ConfigService
         if (!string.IsNullOrEmpty(updated.PostgresDbName))
             existing.PostgresDbName = updated.PostgresDbName;
 
+        if (updated.BackupCompletoDataInicial.HasValue)
+            existing.BackupCompletoDataInicial = updated.BackupCompletoDataInicial;
+        if (updated.BackupCompletoHora.HasValue)
+            existing.BackupCompletoHora = updated.BackupCompletoHora;
+        if (!string.IsNullOrEmpty(updated.BackupCompletoFrequencia))
+            existing.BackupCompletoFrequencia = updated.BackupCompletoFrequencia;
+
+        if (updated.BackupIncrementalDataInicial.HasValue)
+            existing.BackupIncrementalDataInicial = updated.BackupIncrementalDataInicial;
+        if (updated.BackupIncrementalHora.HasValue)
+            existing.BackupIncrementalHora = updated.BackupIncrementalHora;
+        if (!string.IsNullOrEmpty(updated.BackupIncrementalFrequencia))
+            existing.BackupIncrementalFrequencia = updated.BackupIncrementalFrequencia;
+
+        if (!string.IsNullOrEmpty(updated.CaminhoExeBackupWindows))
+            existing.CaminhoExeBackupWindows = updated.CaminhoExeBackupWindows;
+
         return existing;
     }
 }

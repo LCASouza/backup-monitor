@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackupMonitor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+149865198712c45c032467443eed4cd23e7dcc35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5b6793f6020d154b762438fe0a836abc51f55b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackupMonitor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackupMonitor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

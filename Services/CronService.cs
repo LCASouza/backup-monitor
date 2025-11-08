@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BackupMonitor.Services
 {
-    public class CronService
+    public static class CronService
     {
         private static string GetCronTimeString(DateTimeOffset date, TimeSpan time, string frequency)
         {
@@ -20,10 +20,14 @@ namespace BackupMonitor.Services
                 case "Diário":
                     break;
                 case "Semanal":
-                    dayOfWeek = date.DayOfWeek.ToString().Substring(0, 3).ToLower();
+                    // cron espera números 0-6 (Dom-Sab). Transformamos DayOfWeek em número.
+                    int dow = (int)date.DayOfWeek; // Sunday=0
+                    dayOfWeek = dow.ToString();
                     break;
                 case "Mensal":
                     dayOfMonth = date.Day.ToString();
+                    break;
+                default:
                     break;
             }
 
@@ -32,15 +36,22 @@ namespace BackupMonitor.Services
 
         public static void ScheduleBackup(string scriptPath, DateTimeOffset date, TimeSpan time, string frequency, string jobName)
         {
+            if (string.IsNullOrEmpty(scriptPath) || !File.Exists(scriptPath))
+                throw new FileNotFoundException("Script não encontrado", scriptPath);
+
             string cronTime = GetCronTimeString(date, time, frequency);
-            string cronCommand = $"{cronTime} /bin/bash {scriptPath} # {jobName}";
+            // comando executado por cron: chamar /bin/bash -lc "script" para carregar env do shell
+            string cronCommand = $"{cronTime} /bin/bash -lc \"'{scriptPath}'\" # {jobName}";
 
             string currentCrontab = "";
             try
             {
                 currentCrontab = RunCommand("crontab -l");
             }
-            catch{}
+            catch
+            {
+                currentCrontab = string.Empty;
+            }
 
             var filtered = new StringBuilder();
             using (var reader = new StringReader(currentCrontab))
@@ -55,13 +66,21 @@ namespace BackupMonitor.Services
 
             filtered.AppendLine(cronCommand);
 
-            var newCrontab = filtered.ToString();
-            RunCommand("crontab -", newCrontab);
+            RunCommand("crontab -", filtered.ToString());
         }
 
         public static void RemoveBackupJob(string jobName)
         {
-            string currentCrontab = RunCommand("crontab -l");
+            string currentCrontab = "";
+            try
+            {
+                currentCrontab = RunCommand("crontab -l");
+            }
+            catch
+            {
+                return;
+            }
+
             var filtered = new StringBuilder();
             using (var reader = new StringReader(currentCrontab))
             {
@@ -89,12 +108,12 @@ namespace BackupMonitor.Services
                 CreateNoWindow = true
             };
 
-            var process = new Process { StartInfo = psi };
+            using var process = new Process { StartInfo = psi };
             process.Start();
 
             if (!string.IsNullOrEmpty(input))
             {
-                process.StandardInput.WriteLine(input);
+                process.StandardInput.Write(input);
                 process.StandardInput.Close();
             }
 
@@ -107,21 +126,6 @@ namespace BackupMonitor.Services
                 throw new Exception($"Erro ao executar '{cmd}': {error}");
 
             return output;
-        }
-
-        public static void CriarScriptBackup(string path, string conteudo)
-        {
-            File.WriteAllText(path, conteudo);
-
-            // dar permissão de execução
-            var chmod = new ProcessStartInfo
-            {
-                FileName = "/bin/bash",
-                Arguments = $"-c \"chmod +x {path}\"",
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            Process.Start(chmod);
         }
     }
 }
