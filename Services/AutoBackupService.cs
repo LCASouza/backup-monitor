@@ -10,14 +10,22 @@ namespace BackupMonitor.Services
         private readonly PostgresService _pgService = new();
         private readonly HashService _hashService = new();
         private readonly CriptografiaService _cryptoService = new();
-        private readonly AzureBlobService _azureService = new();
 
         public void ExecutarBackupAutomatico(AppConfig cfg, string tipo, string filePath)
         {
+            string logDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".backup_monitor", "logs");
+            Directory.CreateDirectory(logDir);
+            string logFile = Path.Combine(logDir, $"auto_backup_{DateTime.Now:yyyyMMdd_HHmmss}.log");
+
+            void Log(string msg)
+            {
+                File.AppendAllText(logFile, $"[{DateTime.Now:HH:mm:ss}] {msg}\n");
+            }
+                
             try
             {
-                Console.WriteLine($"📦 Iniciando backup automático ({tipo})...");
-                Console.WriteLine($"Destino: {filePath}");
+                Log($"📦 Iniciando backup automático ({tipo})...");
+                Log($"Destino: {filePath}");
 
                 // Garante que o diretório existe
                 Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
@@ -32,29 +40,30 @@ namespace BackupMonitor.Services
                     filePath
                 );
 
-                Console.WriteLine("🔐 Calculando hash...");
+                Log("🔐 Calculando hash...");
                 string hash = _hashService.ComputeSha256(dumpPath);
 
                 // ✅ Corrigido: gerar o .enc no mesmo diretório, sem Path.Combine com arquivo
                 string encPath = Path.ChangeExtension(dumpPath, ".enc");
 
-                Console.WriteLine("🔒 Criptografando backup...");
+                Log("🔒 Criptografando backup...");
                 _cryptoService.EncryptFile(dumpPath, encPath, cfg.AccessPassword);
 
                 string blobName = $"{cfg.PostgresDbName}_{tipo}_{DateTime.Now:yyyyMMdd_HHmmss}_{hash[..12]}.enc";
-                Console.WriteLine($"☁️  Enviando para o Azure como '{blobName}'...");
+                Log($"☁️  Enviando para o Azure como '{blobName}'...");
 
-                _azureService.Upload(encPath, blobName);
+                var azureService = new AzureBlobService(cfg);
+                azureService.Upload(encPath, blobName);
 
                 // Limpeza
                 if (File.Exists(dumpPath)) File.Delete(dumpPath);
                 if (File.Exists(encPath)) File.Delete(encPath);
 
-                Console.WriteLine($"✅ Backup automático do banco '{cfg.PostgresDbName}' enviado com sucesso!");
+                Log($"✅ Backup automático do banco '{cfg.PostgresDbName}' enviado com sucesso!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"❌ Falha no backup automático: {ex.Message}");
+                Log($"❌ Falha no backup automático: {ex.Message}");
             }
         }
     }

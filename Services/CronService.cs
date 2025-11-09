@@ -41,7 +41,7 @@ namespace BackupMonitor.Services
 
             string cronTime = GetCronTimeString(date, time, frequency);
             // comando executado por cron: chamar /bin/bash -lc "script" para carregar env do shell
-            string cronCommand = $"{cronTime} /bin/bash -lc \"'{scriptPath}'\" # {jobName}";
+            string cronCommand = $"{cronTime} /bin/bash \"{scriptPath}\" # {jobName}";
 
             string currentCrontab = "";
             try

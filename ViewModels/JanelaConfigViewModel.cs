@@ -12,15 +12,18 @@ using BackupMonitor.Models;
 
 namespace BackupMonitor.ViewModels
 {
-    public partial class JanelaConfigViewModel : ObservableObject
+    public partial class JanelaConfigViewModel : ViewModelBase
     {
         [ObservableProperty]
         private JanelaConfigModel modelo = new JanelaConfigModel();
 
-        public JanelaConfigViewModel(string connectionString, string senhaAcesso)
+        public JanelaConfigViewModel()
         {
-            Modelo.CadeiaConexaoAzure = connectionString;
-            Modelo.Password = senhaAcesso;
+            var cfg = SessionContext.CurrentConfig!;
+
+            Modelo.CadeiaConexaoAzure = cfg.AzureConnectionString;
+            Modelo.ContainerAzure = cfg.AzureContainer;
+            Modelo.Password = cfg.AccessPassword;
 
             if (Environment.OSVersion.Platform == PlatformID.Unix)
             {
@@ -37,7 +40,8 @@ namespace BackupMonitor.ViewModels
         {
             var config = new AppConfig
             {
-                AzureConnectionString = Modelo.CadeiaConexaoAzure
+                AzureConnectionString = Modelo.CadeiaConexaoAzure,
+                AzureContainer = Modelo.ContainerAzure
             };
 
             ConfigService.SaveConfig(config, Modelo.Password);

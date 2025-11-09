@@ -18,17 +18,27 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="10">
             <Button Content="📅 Abrir Agendamento de Backup"
 		        HorizontalAlignment="Left"
+                Height="30"
 		        Command="{Binding AbrirJanelaBackupCommand}"
 		        Background="DodgerBlue"
 		        Foreground="White"
-		        Padding="5,2" />
+		        Padding="5 5 10 5" />
 
             <Button Content="⚙️ Configurações Azure"
 		        HorizontalAlignment="Left"
+                Height="30"
 		        Command="{Binding AbrirJanelaConfigCommand}"
 		        Background="DodgerBlue"
 		        Foreground="White"
-		        Padding="5,2" />
+		        Padding="5 5 10 5" />
+
+            <Button Content="📤 Restaurar Backup"
+		        HorizontalAlignment="Left"
+                Height="30"
+		        Command="{Binding AbrirRestoreCommand}"
+		        Background="DodgerBlue"
+		        Foreground="White"
+		        Padding="5 5 10 5" />
         </StackPanel>
 
 		<Separator Margin="0,10"/>

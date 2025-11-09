@@ -60,9 +60,11 @@ public class ConfigService
 
     private static AppConfig MergeConfigs(AppConfig existing, AppConfig updated)
     {
-        // Copia apenas os campos não nulos / não vazios
         if (!string.IsNullOrEmpty(updated.AzureConnectionString))
             existing.AzureConnectionString = updated.AzureConnectionString;
+
+        if (!string.IsNullOrEmpty(updated.AzureContainer))
+            existing.AzureContainer = updated.AzureContainer;
 
         if (!string.IsNullOrEmpty(updated.AccessPassword))
             existing.AccessPassword = updated.AccessPassword;

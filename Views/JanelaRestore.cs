@@ -3,11 +3,11 @@ using BackupMonitor.ViewModels;
 
 namespace BackupMonitor.Views;
 
-public partial class JanelaConfig : Window
+public partial class JanelaRestore : Window
 {
-    public JanelaConfig()
+    public JanelaRestore()
     {
         InitializeComponent();
-        DataContext = new JanelaConfigViewModel();
+        DataContext = new JanelaRestoreViewModel();
     }
 }

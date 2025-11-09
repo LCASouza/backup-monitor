@@ -1,0 +1,108 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BackupMonitor.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:conv="clr-namespace:BackupMonitor.Conversores"
+        mc:Ignorable="d" d:DesignWidth="710" d:DesignHeight="380" WindowStartupLocation="CenterScreen"
+        MinWidth="710" MinHeight="380" MaxWidth="710" MaxHeight="380"
+        x:Class="BackupMonitor.Views.JanelaRestore"
+        x:DataType="vm:JanelaRestoreViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Restaurar Backup">
+
+	<Design.DataContext>
+		<vm:JanelaRestoreViewModel/>
+	</Design.DataContext>
+
+    <Window.Resources>
+        <conv:EqualityConverter x:Key="EqualityConverter" />
+    </Window.Resources>
+
+	<ScrollViewer>
+        <StackPanel Margin="20" Spacing="15">
+            <TextBlock Text="📤 Restauração de Backup"
+                       FontSize="18" FontWeight="Bold"/>
+
+            <StackPanel Orientation="Horizontal" Spacing="20">
+                <!-- Origem do Backup -->
+				<StackPanel Spacing="5">
+					<TextBlock Text="Origem do Backup" />
+					<ComboBox ItemsSource="{Binding Modelo.Origens}" SelectedItem="{Binding Modelo.OrigemSelecionada}" Width="130" />
+				</StackPanel>
+
+                <!-- Arquivo de Backup -->
+                <StackPanel Width="500" Spacing="5" IsVisible="{Binding Modelo.OrigemSelecionada, Converter={StaticResource EqualityConverter}, ConverterParameter=Local}">
+					<TextBlock Text="Arquivo de backup"/>
+
+					<StackPanel Spacing="5" Orientation="Horizontal">
+						<TextBox Width="400" Text="{Binding Modelo.CaminhoArquivo}" IsReadOnly="True" HorizontalAlignment="Left"/>
+						<Button Content="Selecionar" Command="{Binding SelecionarArquivoCommand}" CommandParameter="{Binding $parent[Window]}" Margin="5 0 0 0" />
+					</StackPanel>
+                </StackPanel>
+
+                <!-- Backup Azure -->
+                <StackPanel Orientation="Horizontal" IsVisible="{Binding Modelo.OrigemSelecionada, Converter={StaticResource EqualityConverter}, ConverterParameter=Azure}">
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Backups disponíveis no Azure"/>
+                        <ComboBox ItemsSource="{Binding Modelo.BackupsAzure}"
+                                SelectedItem="{Binding Modelo.BackupSelecionadoAzure}"
+                                Width="400" />
+                    </StackPanel>
+
+                    <Button Content="Atualizar lista" Command="{Binding ListarBackupsAzureCommand}" Margin="10 20 0 0" />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Spacing="20">
+                <StackPanel Spacing="5">
+					<TextBlock Text="Usuário do banco de dados"/>
+					<TextBox Text="{Binding Modelo.PostgresUserRestore}" Width="250" HorizontalAlignment="Left"/>
+				</StackPanel>
+
+				<StackPanel Spacing="5">
+					<TextBlock Text="Senha usuário banco de dados"/>
+					<TextBox PasswordChar="*" Text="{Binding Modelo.PostgresPassword}" Width="225" HorizontalAlignment="Left"/>
+				</StackPanel>
+
+                <StackPanel Spacing="5">
+					<TextBlock Text="Senha de acesso"/>
+					<TextBox PasswordChar="*" Text="{Binding Modelo.AccessPassword}" Width="125" HorizontalAlignment="Left"/>
+				</StackPanel>
+			</StackPanel>
+
+            <StackPanel Orientation="Horizontal" Spacing="20">
+                <StackPanel Width="300" Spacing="5">
+                    <TextBlock Text="Banco de Destino"/>
+                    <TextBox Text="{Binding Modelo.BancoDestino}" />
+                </StackPanel>
+
+                <StackPanel Width="200" Spacing="5">
+                    <TextBlock Text="Host"/>
+                    <TextBox Text="{Binding Modelo.PostgresHost}" />
+                </StackPanel>
+
+                <StackPanel Width="100" Spacing="5">
+                    <TextBlock Text="Porta"/>
+                    <TextBox Text="{Binding Modelo.PostgresPort}" />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,10,0,0">
+                <Button Content="Restaurar Backup" IsVisible="{Binding Modelo.OrigemSelecionada, Converter={StaticResource EqualityConverter}, ConverterParameter=Local}"
+                        Command="{Binding RestaurarBackupCommand}"
+                        Background="Green"
+                        Foreground="White" />
+
+                <Button Content="Restaurar Selecionado" IsVisible="{Binding Modelo.OrigemSelecionada, Converter={StaticResource EqualityConverter}, ConverterParameter=Azure}"
+                        Command="{Binding RestaurarBackupAzureCommand}"
+                        Background="Green"
+                        Foreground="White" />
+            </StackPanel>
+
+            <Border Background="#E0E0E0" Padding="10" CornerRadius="5">
+                <TextBlock Text="{Binding Modelo.Status}" TextWrapping="Wrap"/>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

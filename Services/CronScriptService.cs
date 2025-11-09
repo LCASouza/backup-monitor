@@ -8,10 +8,6 @@ namespace BackupMonitor.Services
 {
     public static class CronScriptService
     {
-        /// <summary>
-        /// Garante que o diretório de backup exista e cria o script .sh com permissão de execução.
-        /// Retorna o caminho do script criado.
-        /// </summary>
         public static string EnsureScript(string homeDir, string scriptFileName, string scriptContent)
         {
             if (string.IsNullOrEmpty(homeDir))
@@ -28,7 +24,7 @@ namespace BackupMonitor.Services
             var scriptPath = Path.Combine(scriptsDir, scriptFileName);
 
             // Escreve/replace do script
-            File.WriteAllText(scriptPath, scriptContent, Encoding.UTF8);
+            File.WriteAllText(scriptPath, scriptContent, new UTF8Encoding(false));
 
             // Garante permissões executáveis (chmod +x)
             var psi = new ProcessStartInfo
@@ -44,81 +40,82 @@ namespace BackupMonitor.Services
             return scriptPath;
         }
 
-        /// <summary>
-        /// Gera o template do script de backup completo com pg_dump.
-        /// Usa variáveis de ambiente para senha (PGPASSWORD) para evitar expor em comando.
-        /// </summary>
         public static string GetCompleteBackupScriptTemplate(string pgHost, int pgPort, string pgUser, string dbName)
         {
             // usa $HOME e cria arquivo em $HOME/backups/
             return $@"#!/bin/bash
-set -euo pipefail
-HOME_DIR=""$HOME""
-BACKUP_DIR=""$HOME_DIR/backups""
-mkdir -p ""$BACKUP_DIR""
+                    set -euo pipefail
+                    HOME_DIR=""$HOME""
+                    BACKUP_DIR=""$HOME_DIR/backups""
+                    mkdir -p ""$BACKUP_DIR""
 
-DATA=$(date +'%Y-%m-%d_%H-%M')
-OUT=""$BACKUP_DIR/{dbName}_completo_$DATA.dump""
+                    DATA=$(date +'%Y-%m-%d_%H-%M')
+                    OUT=""$BACKUP_DIR/{dbName}_completo_$DATA.dump""
 
-# Exemplo de uso: export PGPASSWORD='senha' antes ou use .pgpass
-export PGPASSWORD=""${{PGPASSWORD:-}}""  # se PGPASSWORD não estiver setado, será vazio
+                    # Exemplo de uso: export PGPASSWORD='senha' antes ou use .pgpass
+                    export PGPASSWORD=""${{PGPASSWORD:-}}""  # se PGPASSWORD não estiver setado, será vazio
 
-pg_dump -h {pgHost} -p {pgPort} -U {pgUser} -F c {dbName} -f ""$OUT""
-# opcional: compressar
-# gzip -f ""$OUT""
-echo ""Backup completo criado: $OUT""
-";
+                    pg_dump -h {pgHost} -p {pgPort} -U {pgUser} -F c {dbName} -f ""$OUT""
+                    # opcional: compressar
+                    # gzip -f ""$OUT""
+                    echo ""Backup completo criado: $OUT""
+                    ";
         }
 
-        /// <summary>
-        /// Gera o template do script de backup incremental (ex.: tabela financeira ou parcial).
-        /// </summary>
         public static string GetIncrementalBackupScriptTemplate(string pgHost, int pgPort, string pgUser, string dbName, string objectToDump)
         {
             // objectToDump pode ser '-t tabela' ou lista de tabelas
             return $@"#!/bin/bash
-set -euo pipefail
-HOME_DIR=""$HOME""
-BACKUP_DIR=""$HOME_DIR/backups""
-mkdir -p ""$BACKUP_DIR""
+                    set -euo pipefail
+                    HOME_DIR=""$HOME""
+                    BACKUP_DIR=""$HOME_DIR/backups""
+                    mkdir -p ""$BACKUP_DIR""
 
-DATA=$(date +'%Y-%m-%d_%H-%M')
-OUT=""$BACKUP_DIR/{dbName}_parcial_{objectToDump.Replace(" ", "_")}_$DATA.dump""
+                    DATA=$(date +'%Y-%m-%d_%H-%M')
+                    OUT=""$BACKUP_DIR/{dbName}_parcial_{objectToDump.Replace(" ", "_")}_$DATA.dump""
 
-export PGPASSWORD=""${{PGPASSWORD:-}}"" 
+                    export PGPASSWORD=""${{PGPASSWORD:-}}"" 
 
-pg_dump -h {pgHost} -p {pgPort} -U {pgUser} -F c {dbName} {objectToDump} -f ""$OUT""
-echo ""Backup parcial criado: $OUT""
-";
+                    pg_dump -h {pgHost} -p {pgPort} -U {pgUser} -F c {dbName} {objectToDump} -f ""$OUT""
+                    echo ""Backup parcial criado: $OUT""
+                    ";
         }
 
         private static string GetBackupScriptTemplate(string tipo, AppConfig cfg)
         {
             string dbName = cfg.PostgresDbName ?? "financas";
+
             string script = $@"#!/bin/bash
-set -euo pipefail
-HOME_DIR=""$HOME""
-BACKUP_DIR=""$HOME_DIR/backups""
-mkdir -p ""$BACKUP_DIR""
+        set -euo pipefail
 
-DATA=$(date +'%Y-%m-%d_%H-%M')
-OUT=""$BACKUP_DIR/{dbName}_{tipo}_$DATA.dump""
+        # --- Configuração de ambiente ---
+        export PATH=/usr/bin:/usr/local/bin:/usr/share/dotnet:$PATH
+        export DOTNET_ROOT=/usr/share/dotnet
+        export HOME=""$HOME""
+        export BACKUPMONITOR_PASSWORD=""{cfg.AccessPassword}""
 
-#Usa variável de ambiente PGPASSWORD
-export PGPASSWORD=""{cfg.PostgresPassword}""
+        HOME_DIR=""$HOME""
+        BACKUP_DIR=""$HOME_DIR/backups""
+        mkdir -p ""$BACKUP_DIR""
 
-#Gera o dump
-pg_dump -h {cfg.PostgresHost} -p {cfg.PostgresPort} -U {cfg.PostgresUser} -F c {dbName} -f ""$OUT""
+        DATA=$(date +'%Y-%m-%d_%H-%M')
+        OUT=""$BACKUP_DIR/{dbName}_{tipo}_$DATA.dump""
 
-#Compacta e criptografa o dump antes de enviar
-gzip -f ""$OUT""
-OUT_GZ=""$OUT.gz""
+        # Usa variável de ambiente PGPASSWORD
+        export PGPASSWORD=""{cfg.PostgresPassword}""
 
-#Chama o app para fazer upload e registrar o hash no Azure
-dotnet ""{AppContext.BaseDirectory}BackupMonitor.dll"" --auto-backup {tipo} --file ""$OUT_GZ""
+        # --- Gera o dump ---
+        pg_dump -h {cfg.PostgresHost} -p {cfg.PostgresPort} -U {cfg.PostgresUser} -F c {dbName} -f ""$OUT""
 
-echo ""✅ Backup {tipo} concluído com sucesso: $OUT_GZ""
-";
+        # --- Compacta ---
+        gzip -f ""$OUT""
+        OUT_GZ=""$OUT.gz""
+
+        # --- Executa o app .NET para envio ao Azure ---
+        dotnet ""{AppContext.BaseDirectory}BackupMonitor.dll"" --auto-backup {tipo} --file ""$OUT_GZ"" >> ""$HOME/.backup_monitor/cron_exec.log"" 2>&1
+
+        echo ""✅ Backup {tipo} concluído com sucesso: $OUT_GZ"" >> ""$HOME/.backup_monitor/cron_exec.log""
+        ";
             return script;
         }
 
@@ -130,7 +127,7 @@ echo ""✅ Backup {tipo} concluído com sucesso: $OUT_GZ""
 
             string scriptPath = Path.Combine(scriptsDir, $"backup_{tipo}.sh");
             string content = GetBackupScriptTemplate(tipo, cfg);
-            File.WriteAllText(scriptPath, content, Encoding.UTF8);
+            File.WriteAllText(scriptPath, content, new UTF8Encoding(false));
 
             // Dar permissão de execução
             var psi = new ProcessStartInfo

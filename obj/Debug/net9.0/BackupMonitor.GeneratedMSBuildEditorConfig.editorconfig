@@ -35,6 +35,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/Views/JanelaConfig.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/Views/JanelaRestore.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/media/lsouza/SSD TOP/Develop/Desenvolvimento/BackupMonitor/Views/JanelaSenha.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

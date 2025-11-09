@@ -5,7 +5,7 @@ using BackupMonitor.Views;
 
 namespace BackupMonitor.ViewModels
 {
-    public partial class JanelaSenhaViewModel : ObservableObject
+    public partial class JanelaSenhaViewModel : ViewModelBase
     {
         private readonly JanelaSenha janela;
 
@@ -25,9 +25,10 @@ namespace BackupMonitor.ViewModels
         {
             try
             {
-                var config = ConfigService.LoadConfig(SenhaAcesso);
-                Status = "Senha correta!";
+                var cfg = SessionContext.CurrentConfig!;
                 janela.Confirmar(SenhaAcesso);
+
+                Status = "Senha confirmada com sucesso.";
             }
             catch
             {

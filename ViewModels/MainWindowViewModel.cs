@@ -7,6 +7,7 @@ using BackupMonitor.Services;
 using BackupMonitor.Views;
 using Avalonia.Controls;
 using BackupMonitor.Models;
+using Avalonia.Controls.ApplicationLifetimes;
 
 namespace BackupMonitor.ViewModels;
 
@@ -52,6 +53,10 @@ public partial class MainWindowViewModel : ViewModelBase
             }
 
             var config = ConfigService.LoadConfig(janelaSenha.SenhaAcesso);
+
+            SessionContext.CurrentConfig = config;
+            SessionContext.AccessPassword = janelaSenha.SenhaAcesso;
+
             appConfig = config;
 
             Modelo.DbHost = config.PostgresHost;
@@ -236,7 +241,7 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     private void AbrirJanelaBackup()
     {
-        JanelaBackup janela = new(appConfig.AccessPassword);
+        JanelaBackup janela = new();
 
         janela.Show();
     }
@@ -244,17 +249,15 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     private void AbrirJanelaConfig()
     {
-        JanelaConfig janela;
-
-        if (appConfig == null)
-        {
-            janela = new();
-        }
-        else
-        {
-            janela = new(appConfig.AzureConnectionString, appConfig.AccessPassword);
-        }
+        JanelaConfig janela = new();
 
         janela.Show();
+    }
+
+    [RelayCommand]
+    private void AbrirRestore()
+    {
+        var janela = new JanelaRestore();
+        janela.ShowDialog(App.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop ? desktop.MainWindow : null);
     }
 }

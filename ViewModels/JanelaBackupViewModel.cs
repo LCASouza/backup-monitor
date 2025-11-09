@@ -12,16 +12,14 @@ using System.IO;
 //Teste Git
 namespace BackupMonitor.ViewModels
 {
-    public partial class JanelaBackupViewModel : ObservableObject
+    public partial class JanelaBackupViewModel : ViewModelBase
     {
         [ObservableProperty]
         private JanelaBackupModel modelo = new JanelaBackupModel();
 
-        private string senhaAcesso;
-
-        public JanelaBackupViewModel(string senha)
+        public JanelaBackupViewModel()
         {
-            senhaAcesso = senha;
+            
         }
 
         [RelayCommand]
@@ -29,8 +27,7 @@ namespace BackupMonitor.ViewModels
         {
             try
             {
-                //Carregar config.enc com a senha
-                var cfg = ConfigService.LoadConfig(senhaAcesso);
+                var cfg = SessionContext.CurrentConfig!;
 
                 //Criar o script completo
                 string scriptPath = CronScriptService.CriarScript("completo", cfg);
@@ -64,7 +61,7 @@ namespace BackupMonitor.ViewModels
         {
             try
             {
-                var cfg = ConfigService.LoadConfig(senhaAcesso);
+                var cfg = SessionContext.CurrentConfig!;
 
                 string scriptPath = CronScriptService.CriarScript("incremental", cfg);
 

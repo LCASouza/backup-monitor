@@ -3,8 +3,8 @@
         xmlns:vm="using:BackupMonitor.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300" WindowStartupLocation="CenterScreen"
-        MinWidth="600" MinHeight="300" MaxWidth="600" MaxHeight="300"
+        mc:Ignorable="d" d:DesignWidth="460" d:DesignHeight="390" WindowStartupLocation="CenterScreen"
+        MinWidth="460" MinHeight="390" MaxWidth="460" MaxHeight="390"
         x:Class="BackupMonitor.Views.JanelaConfig"
         x:DataType="vm:JanelaConfigViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -20,15 +20,22 @@
                        FontSize="16" FontWeight="Bold" />
 
 			<StackPanel Orientation="Horizontal" Spacing="15">
-				<StackPanel Width="380" Spacing="5">
-					<TextBlock Text="Cadeia de conexão Blob Storage:" />
+				<StackPanel Width="420" Spacing="5">
+					<TextBlock Text="Cadeia de conexão Blob Storage" />
 					<TextBox Text="{Binding Modelo.CadeiaConexaoAzure}" PasswordChar="*"/>
 				</StackPanel>
+			</StackPanel>
 
-				<StackPanel Width="250" Spacing="5" HorizontalAlignment="Left">
+			<StackPanel Orientation="Horizontal" Spacing="15">
+				<StackPanel Width="245" Spacing="5">
+					<TextBlock Text="Nome do container Azure" />
+					<TextBox Text="{Binding Modelo.ContainerAzure}"/>
+				</StackPanel>
+
+				<StackPanel Spacing="5" HorizontalAlignment="Left">
 					<TextBlock Text="Sistema Operacional" />
 					<ComboBox ItemsSource="{Binding Modelo.SistemaOperacionais}"
-							SelectedItem="{Binding Modelo.SistemaOperacional}"/>
+							SelectedItem="{Binding Modelo.SistemaOperacional}" Width="140"/>
 				</StackPanel>
 			</StackPanel>
 
@@ -39,7 +46,7 @@
 				</StackPanel>
 
 				<Button Content="Gravar senha" Command="{Binding GravarSenhaCommand}"
-                        Background="DodgerBlue" Foreground="White"/>
+                        Background="DodgerBlue" Foreground="White" Margin="5 22 0 0"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" Spacing="10">

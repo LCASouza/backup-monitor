@@ -11,6 +11,7 @@ namespace BackupMonitor.Models;
 public class AppConfig
 {
     public string AzureConnectionString { get; set; }
+    public string AzureContainer { get; set; }
     public string PostgresHost { get; set; }
     public int PostgresPort { get; set; }
     public string PostgresUser { get; set; }
@@ -18,6 +19,11 @@ public class AppConfig
     public string PostgresDbName { get; set; }
     public string PostgresConnectionString { get; set; }
     public string AccessPassword { get; set; }
+
+    //Usuário e senha para restore
+    public string RestoreUser { get; set; }
+    public string RestorePassword { get; set; }
+
 
     //Agendamento Completo
     public DateTime? BackupCompletoDataInicial { get; set; }

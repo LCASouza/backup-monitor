@@ -5,9 +5,9 @@ namespace BackupMonitor.Views;
 
 public partial class JanelaBackup : Window
 {
-    public JanelaBackup(string accessPassword)
+    public JanelaBackup()
     {
         InitializeComponent();
-        DataContext = new JanelaBackupViewModel(accessPassword);
+        DataContext = new JanelaBackupViewModel();
     }
 }
