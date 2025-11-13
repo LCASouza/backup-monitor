@@ -6,6 +6,8 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using BackupMonitor.ViewModels;
 using BackupMonitor.Views;
+using System;
+using System.IO;
 
 namespace BackupMonitor;
 
@@ -20,13 +22,17 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
-            // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
-            DisableAvaloniaDataAnnotationValidation();
-            desktop.MainWindow = new MainWindow
+            string configPath = Path.Combine(AppContext.BaseDirectory, "config.enc");
+            bool firstRun = !File.Exists(configPath);
+            
+            if (firstRun)
             {
-                DataContext = new MainWindowViewModel(),
-            };
+                desktop.MainWindow = new JanelaSenha(true);
+            }
+            else
+            {
+                desktop.MainWindow = new MainWindow();
+            }
         }
 
         base.OnFrameworkInitializationCompleted();

@@ -3,8 +3,8 @@
         xmlns:vm="using:BackupMonitor.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="200"
-        MinWidth="480" MinHeight="200" MaxWidth="480" MaxHeight="200" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="210"
+        MinWidth="450" MinHeight="210" MaxWidth="450" MaxHeight="210" WindowStartupLocation="CenterScreen"
         x:Class="BackupMonitor.Views.JanelaSenha"
         x:DataType="vm:JanelaSenhaViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -16,7 +16,7 @@
 
 	<ScrollViewer>
 		<StackPanel Margin="20" Spacing="10">
-			<TextBlock Text="Informe a senha para acessar as configurações"
+			<TextBlock Text="Informe a senha para acessar a aplicação"
                        FontSize="16" FontWeight="Bold" />
 
 			<StackPanel Orientation="Horizontal" Spacing="20">

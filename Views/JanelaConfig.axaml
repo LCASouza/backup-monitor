@@ -49,14 +49,10 @@
                         Background="DodgerBlue" Foreground="White" Margin="5 22 0 0"/>
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal" Spacing="10">
-				<Button Content="Gravar configuração" Command="{Binding GravarConfiguracaoCommand}"
+			<Button Content="Gravar configuração" Command="{Binding GravarConfiguracaoCommand}"
                         Background="DodgerBlue" Foreground="White"/>
-				<Button Content="Excluir configuracao" Command="{Binding ExcluirConfiguracaoCommand}"
-                        Background="Tomato" Foreground="White"/>
-			</StackPanel>
 
-			<Border Background="LightBlue" Padding="10" CornerRadius="5">
+			<Border Background="LightGray" Padding="10" CornerRadius="5">
 				<TextBlock Text="{Binding Modelo.StatusCompleto}" TextWrapping="Wrap" />
 			</Border>
         </StackPanel>

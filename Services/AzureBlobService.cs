@@ -25,7 +25,7 @@ public class AzureBlobService
         
     }
 
-    public void Upload(string filePath, string blobName = null)
+    public void Upload(string filePath, string blobName = "")
     {
         if (string.IsNullOrEmpty(blobName))
             blobName = Path.GetFileName(filePath);

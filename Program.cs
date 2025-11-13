@@ -14,7 +14,7 @@ sealed class Program
     {
         try
         {
-            // Modo de execução automática (via cron)
+            //Modo de execução via CRON ou linha de comando
             if (args.Length >= 2 && args[0] == "--auto-backup")
             {
                 string tipo = args[1];
@@ -30,10 +30,10 @@ sealed class Program
                 var auto = new AutoBackupService();
                 auto.ExecutarBackupAutomatico(cfg, tipo, filePath);
 
-                return 0; // finaliza normalmente
+                return 0;
             }
 
-            // 🧠 Só inicia Avalonia se não estiver em modo automático
+            //Inicialização normal da aplicação com interface gráfica
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
             return 0;
         }

@@ -9,9 +9,9 @@ public class CriptografiaService
 {
     private byte[] GetKey(string password)
     {
-        using (var deriveBytes = new Rfc2898DeriveBytes(password, salt: new byte[8], 1000))
+        using (var sha256 = SHA256.Create())
         {
-            return deriveBytes.GetBytes(32); // 256 bits para AES
+            return sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
         }
     }
 
@@ -41,7 +41,7 @@ public class CriptografiaService
         using (var inputStream = File.OpenRead(encryptedPath))
         {
             byte[] iv = new byte[16];
-            inputStream.Read(iv, 0, iv.Length);
+            inputStream.ReadExactly(iv);
 
             aes.Key = GetKey(password);
             aes.IV = iv;
@@ -52,30 +52,5 @@ public class CriptografiaService
                 cryptoStream.CopyTo(outputStream);
             }
         }
-    }
-
-    // Para manipular strings diretamente (opcional)
-    public string EncryptString(string plainText, string password)
-    {
-        string tempFile = Path.GetTempFileName();
-        string encFile = Path.GetTempFileName();
-        File.WriteAllText(tempFile, plainText);
-        EncryptFile(tempFile, encFile, password);
-        string result = Convert.ToBase64String(File.ReadAllBytes(encFile));
-        File.Delete(tempFile);
-        File.Delete(encFile);
-        return result;
-    }
-
-    public string DecryptString(string encryptedBase64, string password)
-    {
-        string tempFile = Path.GetTempFileName();
-        string decFile = Path.GetTempFileName();
-        File.WriteAllBytes(tempFile, Convert.FromBase64String(encryptedBase64));
-        DecryptFile(tempFile, decFile, password);
-        string result = File.ReadAllText(decFile);
-        File.Delete(tempFile);
-        File.Delete(decFile);
-        return result;
     }
 }

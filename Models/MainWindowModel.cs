@@ -28,4 +28,7 @@ public partial class MainWindowModel : ObservableObject
 
     [ObservableProperty]
     private string status = "Pronto";
+
+    [ObservableProperty]
+    private bool isOk = true;
 }

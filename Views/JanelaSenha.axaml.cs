@@ -8,6 +8,12 @@ public partial class JanelaSenha : Window
 {
     public string SenhaAcesso { get; private set; }
 
+    public JanelaSenha(bool primeiroAcesso)
+    {
+        InitializeComponent();
+        DataContext = new JanelaSenhaViewModel(primeiroAcesso);
+    }
+
     public JanelaSenha()
     {
         InitializeComponent();

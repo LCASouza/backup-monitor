@@ -3,8 +3,8 @@
         xmlns:vm="using:BackupMonitor.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="370"
-        MinWidth="700" MinHeight="370" MaxWidth="700" MaxHeight="450" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" d:DesignWidth="680" d:DesignHeight="410"
+        MinWidth="680" MinHeight="410" MaxWidth="680" MaxHeight="410" WindowStartupLocation="CenterScreen"
         x:Class="BackupMonitor.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -16,36 +16,38 @@
 
      <StackPanel Margin="20" Spacing="10">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="10">
-            <Button Content="📅 Abrir Agendamento de Backup"
+            <Button Content="📅 Agendamento de Backup"
 		        HorizontalAlignment="Left"
                 Height="30"
 		        Command="{Binding AbrirJanelaBackupCommand}"
-		        Background="DodgerBlue"
-		        Foreground="White"
-		        Padding="5 5 10 5" />
-
-            <Button Content="⚙️ Configurações Azure"
-		        HorizontalAlignment="Left"
-                Height="30"
-		        Command="{Binding AbrirJanelaConfigCommand}"
-		        Background="DodgerBlue"
-		        Foreground="White"
+		        Background="LightBlue"
+		        Foreground="Black"
 		        Padding="5 5 10 5" />
 
             <Button Content="📤 Restaurar Backup"
 		        HorizontalAlignment="Left"
                 Height="30"
 		        Command="{Binding AbrirRestoreCommand}"
-		        Background="DodgerBlue"
-		        Foreground="White"
+		        Background="LightBlue"
+		        Foreground="Black"
 		        Padding="5 5 10 5" />
+
+            <Button Content="⚙️ Configurações"
+		        HorizontalAlignment="Left"
+                Height="30"
+		        Command="{Binding AbrirJanelaConfigCommand}"
+		        Background="LightBlue"
+		        Foreground="Black"
+		        Padding="5 5 10 5" />
+
+            <Label Content="V1.0" Margin="35 3 0 0"/>
         </StackPanel>
 
 		<Separator Margin="0,10"/>
 		 
-        <TextBlock Text="🔒 Backup do PostgreSQL" FontSize="18" FontWeight="Bold" />
+        <TextBlock Text="Backup PostgreSQL" FontSize="18" FontWeight="Bold" />
         
-        <StackPanel Orientation="Horizontal" Spacing="15">
+        <StackPanel Orientation="Horizontal" Spacing="15" IsVisible="{Binding Modelo.IsOk}">
             <!-- Host -->
             <StackPanel Spacing="5" Width="240">
                 <TextBlock Text="Host" />
@@ -54,39 +56,44 @@
 
             <!-- Nome Banco de Dados -->
             <StackPanel Spacing="5" Width="240">
-                <TextBlock Text="Nome do banco de Dados" />
+                <TextBlock Text="Nome do banco de dados" />
                 <TextBox Text="{Binding Modelo.DbName}" />
             </StackPanel>
 
             <!-- Porta -->
-            <StackPanel Spacing="5" Width="100">
-                <TextBlock Text="Porta" />
+            <StackPanel Spacing="5" Width="120">
+                <TextBlock Text="Porta de conexão" />
                 <TextBox Text="{Binding Modelo.DbPort}" />
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Spacing="15">
-            <StackPanel Spacing="5" Width="300">
-                <TextBlock Text="Usuário do banco de dados" />
+        <StackPanel Orientation="Horizontal" Spacing="15" IsVisible="{Binding Modelo.IsOk}">
+            <StackPanel Spacing="5" Width="320">
+                <TextBlock Text="Usuário BD" />
                 <TextBox Text="{Binding Modelo.DbUser}" />
             </StackPanel>
 
-            <StackPanel Spacing="5" Width="300">
-                <TextBlock Text="Senha do banco de dados" />
+            <StackPanel Spacing="5" Width="295">
+                <TextBlock Text="Senha do usuário BD" />
                 <TextBox Text="{Binding Modelo.DbPassword}" PasswordChar="*" />
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Spacing="20" Margin="0 25 0 0">
-            <Button Content="Testar Conexão" Command="{Binding TestarConexaoCommand}" />
-            <Button Content="Gravar dados" Command="{Binding GravarDadosPostgresCommand}" />
+        <StackPanel Orientation="Horizontal" Spacing="20" Margin="0 25 0 0" IsVisible="{Binding Modelo.IsOk}">
+            <Button Content="Testar Conexão" Command="{Binding TestarConexaoCommand}" 
+                    Background="DodgerBlue" Foreground="White"/>
+
+            <Button Content="Gravar dados" Command="{Binding GravarDadosPostgresCommand}" 
+                    Background="DodgerBlue" Foreground="White" />
+                    
             <Button Content="Fazer Backup local" Command="{Binding BackupLocalCommand}" 
                     Background="RoyalBlue" Foreground="White" />
-            <Button Content="Fazer Backup no Azure" Command="{Binding BackupDatabaseCommand}" 
+
+            <Button Content="Fazer Backup no Azure" Command="{Binding BackupDatabaseAzureCommand}" 
                     Background="Green" Foreground="White" />
         </StackPanel>
 
-        <Border Background="LightBlue" Padding="10" CornerRadius="5" Margin="0 2 0 0">
+        <Border Background="LightGray" Padding="10" CornerRadius="5" Margin="0 2 10 0"> 
             <TextBlock Text="{Binding Modelo.Status}" TextWrapping="Wrap" />
         </Border>
     </StackPanel>

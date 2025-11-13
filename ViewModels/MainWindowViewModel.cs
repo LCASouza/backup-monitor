@@ -21,23 +21,34 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly PostgresService pgService = new();
     private readonly HashService hashService = new();
     private readonly CriptografiaService criptoService = new();
-    private readonly AzureBlobService azureService = new();
-    
-    public bool isOk = false;
+    private AzureBlobService azureService = new();
+
+    private bool TestFirstRun(out string mensagemRetorno)
+    {
+        string configPath = Path.Combine(AppContext.BaseDirectory, "config.enc");
+        if (!File.Exists(configPath))
+        {
+            mensagemRetorno = "Nenhum arquivo de configuração encontrado. Configure a senha de acesso no menu configurações.";
+            return false;
+        }
+        mensagemRetorno = string.Empty;
+        return true;
+    }
 
     public async Task InitializeAsync(Window owner)
     {
         try
         {
+            string mensagemRetorno = string.Empty;
             ownerWindow = owner;
 
             // Caminho padrão do arquivo de configuração
             string configPath = Path.Combine(AppContext.BaseDirectory, "config.enc");
 
-            if (!File.Exists(configPath))
+            if (!TestFirstRun(out mensagemRetorno))
             {
-                Modelo.Status = "Nenhum arquivo de configuração encontrado. Configure os dados no aplicativo.";
-                isOk = true;
+                Modelo.Status = mensagemRetorno;
+                Modelo.IsOk = false;
                 return;
             }
 
@@ -49,6 +60,7 @@ public partial class MainWindowViewModel : ViewModelBase
             if (result != true || string.IsNullOrEmpty(janelaSenha.SenhaAcesso))
             {
                 Modelo.Status = "Operação cancelada pelo usuário.";
+                Modelo.IsOk = false;
                 return;
             }
 
@@ -58,6 +70,7 @@ public partial class MainWindowViewModel : ViewModelBase
             SessionContext.AccessPassword = janelaSenha.SenhaAcesso;
 
             appConfig = config;
+            azureService = new AzureBlobService(appConfig);
 
             Modelo.DbHost = config.PostgresHost;
             Modelo.DbPort = config.PostgresPort;
@@ -65,7 +78,7 @@ public partial class MainWindowViewModel : ViewModelBase
             Modelo.DbPassword = config.PostgresPassword;
             Modelo.DbName = config.PostgresDbName;
 
-            isOk = true;
+            Modelo.IsOk = true;
             Modelo.Status = "Configuração carregada com sucesso.";
         }
         catch (Exception ex)
@@ -75,15 +88,20 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void BackupDatabase()
+    private void BackupDatabaseAzure()
     {
         try
         {
+            if (!ValidarPreenchimento())
+            {
+                return;
+            }
+
             Modelo.Status = "Iniciando dump do PostgreSQL...";
             
             //Gera o dump do banco de dados
             string dumpPath = pgService.BackupDatabase(
-                Modelo.DbHost, Modelo.DbPort, Modelo.DbName, Modelo.DbUser, Modelo.DbPassword, Path.GetTempPath());
+                Modelo.DbHost, Modelo.DbPort, Modelo.DbName, Modelo.DbUser, Modelo.DbPassword, Path.Combine(Path.GetTempPath(), $"{Modelo.DbName}_azure_{DateTime.Now:yyyyMMdd_HHmmss}.dump"));
             
             Modelo.Status = $"Dump criado: {Path.GetFileName(dumpPath)}\nCalculando hash...";
 
@@ -119,6 +137,11 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
+            if (!ValidarPreenchimento())
+            {
+                return;
+            }
+
             Modelo.Status = "Testando conexão com PostgreSQL...";
 
             if (pgService.TestarConexao(Modelo.DbHost, Modelo.DbPort, Modelo.DbUser, Modelo.DbPassword, Modelo.DbName))
@@ -137,29 +160,8 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
-            if (string.IsNullOrEmpty(Modelo.DbHost) ||
-               string.IsNullOrEmpty(Modelo.DbUser) ||
-               string.IsNullOrEmpty(Modelo.DbName))
+            if (!ValidarPreenchimento())
             {
-                Modelo.Status = "❌ Preencha todos os campos obrigatórios.";
-                return;
-            }
-
-            if (Modelo.DbPort <= 0)
-            {
-                Modelo.Status = "❌ A porta deve ser um número válido.";
-                return;
-            }
-
-            if (string.IsNullOrEmpty(Modelo.DbPassword))
-            {
-                Modelo.Status = "❌ A senha do banco de dados não pode ser vazia.";
-                return;
-            }
-
-            if (appConfig == null)
-            {
-                Modelo.Status = "⚠️ É necessário cadastrar uma senha de acesso em configurações antes de gravar os dados.";
                 return;
             }
 
@@ -198,6 +200,11 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         try
         {
+            if (!ValidarPreenchimento())
+            {
+                return;
+            }
+
             Modelo.Status = "📦 Iniciando backup local...";
 
             var dialog = new SaveFileDialog
@@ -240,7 +247,12 @@ public partial class MainWindowViewModel : ViewModelBase
 
     [RelayCommand]
     private void AbrirJanelaBackup()
-    {
+    {   
+        if (!ValidarPreenchimento())
+        {
+            return;
+        }
+
         JanelaBackup janela = new();
 
         janela.Show();
@@ -259,5 +271,35 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         var janela = new JanelaRestore();
         janela.ShowDialog(App.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop ? desktop.MainWindow : null);
+    }
+
+    private bool ValidarPreenchimento()
+    {
+        if (string.IsNullOrEmpty(Modelo.DbHost) ||
+            string.IsNullOrEmpty(Modelo.DbUser) ||
+            string.IsNullOrEmpty(Modelo.DbName))
+        {
+            Modelo.Status = "❌ Preencha todos os campos.";
+            return false;
+        }
+
+        if (Modelo.DbPort <= 0)
+        {
+            Modelo.Status = "❌ A porta deve ser um número válido.";
+            return false;
+        }
+
+        if (string.IsNullOrEmpty(Modelo.DbPassword))
+        {
+            Modelo.Status = "❌ A senha do banco de dados não pode ser vazia.";
+            return false;
+        }
+
+        if (appConfig == null)
+        {
+            Modelo.Status = "⚠️ É necessário cadastrar uma senha de acesso em configurações antes de gravar os dados.";
+            return false;
+        }
+        return true;
     }
 }

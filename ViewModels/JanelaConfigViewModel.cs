@@ -45,6 +45,10 @@ namespace BackupMonitor.ViewModels
             };
 
             ConfigService.SaveConfig(config, Modelo.Password);
+
+            SessionContext.CurrentConfig.AzureConnectionString = Modelo.CadeiaConexaoAzure;
+            SessionContext.CurrentConfig.AzureContainer = Modelo.ContainerAzure;
+
             Modelo.StatusCompleto = "Configuração salva com sucesso!";
         }
 

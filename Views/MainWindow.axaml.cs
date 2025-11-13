@@ -19,7 +19,7 @@ public partial class MainWindow : Window
         {
             await vm.InitializeAsync(this);
 
-            if (!vm.isOk)
+            if (!vm.Modelo.IsOk)
                 Close();
         }
     }
